@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "threadedcommandprocessor.h"
 
 /// Starts one thread for each dependent CommandProcessor

@@ -9,7 +9,7 @@
 
 #define THREADS 2
 
-std::shared_ptr<CommandProcessor> CreateInputContext(std::size_t bulkSize)
+static std::shared_ptr<CommandProcessor> CreateInputContext(std::size_t bulkSize)
 {
     auto reportWritersThreadedProcessor = std::make_shared<ThreadedCommandProcessor<ReportWriter>>("file", THREADS);
     auto consoleOutputThreadedProcessor = std::make_shared<ThreadedCommandProcessor<ConsoleOutput>>("log");
@@ -29,9 +29,9 @@ std::shared_ptr<CommandProcessor> CreateInputContext(std::size_t bulkSize)
     return inputCommandProcessor;
 }
 
-Session::Session(int aBulkSize, tcp_socket aSocket)
+Session::Session(tcp_socket aSocket, std::size_t aBulkSize)
     : mSocket(std::move(aSocket))
-    : mContext(CreateInputContext(aBulkSize))
+    , mContext(CreateInputContext(aBulkSize))
 {
 }
 
