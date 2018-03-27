@@ -38,6 +38,7 @@ add_executable(bulk_client client.cpp)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
+find_package(Boost 1.55.0 REQUIRED COMPONENTS system filesystem)
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
@@ -54,6 +55,7 @@ target_link_libraries(bulk_server
 
 target_link_libraries(bulk_client
         ${Boost_LIBRARIES}
+	Threads::Threads
 )
 
 install(TARGETS bulk_server DESTINATION bin)

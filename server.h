@@ -5,12 +5,12 @@
 class Server
 {
 public:
-    Server(boost::asio::io_service& aIoService, const tcp::endpoint& aEndpoint, int aBulkSize);
+    Server(boost::asio::io_service& aIoService, const tcp::endpoint& aEndpoint, std::size_t aBulkSize);
 
 private:
     void DoAccept();
 
     tcp::acceptor mAcceptor;
     tcp::socket mSocket;
-    int mBulkSize;
+    std::size_t mBulkSize;
 };

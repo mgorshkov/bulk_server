@@ -1,6 +1,8 @@
 #include <iostream>
-
+#include <thread>
 #include <boost/asio.hpp>
+
+#include "structs.h"
 
 using boost::asio::ip::tcp;
 
@@ -23,7 +25,7 @@ public:
                 mWriteMsgs.push_back(aMsg);
                 if (!writeInProgress)
                 {
-                    doWrite();
+                    DoWrite();
                 }
             });
     }
@@ -36,7 +38,14 @@ public:
 private:
     void DoConnect(tcp::resolver::iterator aEndpointIterator)
     {
-        boost::asio::async_connect(mSocket, aEndpointIterator);
+        boost::asio::async_connect(mSocket, aEndpointIterator,
+        [this](boost::system::error_code ec, tcp::resolver::iterator)
+        {
+          if (!ec)
+          {
+            DoWrite();
+          }
+        });
     }
 
     void DoWrite()
@@ -63,20 +72,22 @@ private:
     BulkQueue mWriteMsgs;
 };
 
-int main(int, char *[])
+int main(int argc, char* argv[])
 {
     try
     {
         if (argc != 3)
         {
-            std::cerr << "Usage: bulk_client <host> <port>\n";
+            std::cerr << "Usage: bulk_client <host> <port>" << std::endl;
             return 1;
         }
 
         boost::asio::io_service ioService;
 
         tcp::resolver resolver(ioService);
-        auto endpointIterator = resolver.resolve({ argv[1], argv[2] });
+        auto host = argv[1];
+        auto port = argv[2];
+        auto endpointIterator = resolver.resolve({ host, port });
         BulkClient client(ioService, endpointIterator);
 
         std::thread t([&ioService]()

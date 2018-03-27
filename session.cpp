@@ -29,7 +29,7 @@ static std::shared_ptr<CommandProcessor> CreateInputContext(std::size_t bulkSize
     return inputCommandProcessor;
 }
 
-Session::Session(tcp_socket aSocket, std::size_t aBulkSize)
+Session::Session(tcp::socket aSocket, std::size_t aBulkSize)
     : mSocket(std::move(aSocket))
     , mContext(CreateInputContext(aBulkSize))
 {
