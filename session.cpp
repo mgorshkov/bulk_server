@@ -49,15 +49,18 @@ void Session::DoRead()
         [this, self](boost::system::error_code ec, std::size_t /*length*/)
         {
             if (!ec)
-              Deliver();
+            {
+                Deliver();
+                DoRead();
+            }
         });
 }
   
 void Session::Deliver()
 {
-//#ifdef DEBUG_PRINT
+#ifdef DEBUG_PRINT
     std::cout << "Session::Deliver, this==" << this << ", mReadMsg.data()=" << mReadMsg.data() << ", mReadMsg.size()=" << mReadMsg.size() << std::endl;
-//#endif
+#endif
 
     mContext.ProcessData(mReadMsg.data(), mReadMsg.size());
 }
