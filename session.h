@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 #include "includes.h"
 #include "context.h"
 
@@ -9,12 +11,12 @@ public:
     Session(tcp::socket aSocket, std::size_t aBulkSize);
     
     void Start();
-    void Deliver(const std::string& aMessage);
 
 private:
-	void DoRead();
+    void DoRead();
+    void Deliver();
 
     Context mContext;
     tcp::socket mSocket;
-    std::string mReadMsg;
+    std::array<char, 1> mReadMsg;
 };

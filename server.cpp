@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 {
     try
     {
-        if (argc < 2)
+        if (argc != 3)
         {
            std::cerr << "Usage: bulk_server <port> <bulk_size>" << std::endl;
            return 1;
