@@ -13,6 +13,7 @@ public:
     void Start();
 
 private:
+	void Stop();
     void DoRead();
     void Deliver();
 

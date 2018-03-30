@@ -40,6 +40,11 @@ void Session::Start()
     DoRead();
 }
 
+void Session::Stop()
+{
+    mContext.Stop();
+}
+
 void Session::DoRead()
 {
     auto self(shared_from_this());
@@ -53,6 +58,8 @@ void Session::DoRead()
                 Deliver();
                 DoRead();
             }
+            else
+                Stop();
         });
 }
   
