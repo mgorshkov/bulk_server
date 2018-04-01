@@ -37,6 +37,9 @@ add_executable(bulk_server
 add_executable(bulk_client client.cpp)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
 find_package(Threads REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 
@@ -50,12 +53,12 @@ set(CMAKE_CXX_FLAGS "-std=c++1z")
 
 target_link_libraries(bulk_server
         ${Boost_LIBRARIES}
-	Threads::Threads
+        ${CMAKE_THREAD_LIBS_INIT}
 )
 
 target_link_libraries(bulk_client
         ${Boost_LIBRARIES}
-	Threads::Threads
+        ${CMAKE_THREAD_LIBS_INIT}
 )
 
 install(TARGETS bulk_server DESTINATION bin)
