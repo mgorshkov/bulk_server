@@ -38,7 +38,7 @@ add_executable(bulk_client client.cpp)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
