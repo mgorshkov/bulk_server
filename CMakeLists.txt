@@ -45,13 +45,9 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-	CMAKE_CXX_STANDARD 17
+	CMAKE_CXX_STANDARD 14
 	CMAKE_CXX_STANDARD_REQUIRED ON
 )
-
-set(CMAKE_CXX_FLAGS "-std=c++1z")
-
-add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
 
 target_link_libraries(bulk_server
         ${Boost_LIBRARIES}
