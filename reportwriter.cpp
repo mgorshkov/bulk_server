@@ -38,6 +38,6 @@ std::string ReportWriter::GetFilename(const Command& aCommand)
         aCommand.mTimestamp.time_since_epoch()).count();
     std::ostringstream filename;
     filename << mName << Separator << "bulk" << Separator
-        << mCounters.mBlockCounter << Separator <<  mContext << Separator << seconds << ".log";
+        << mCounters.mBlockCounter << Separator <<  this << Separator << seconds << ".log";
     return filename.str();
 }

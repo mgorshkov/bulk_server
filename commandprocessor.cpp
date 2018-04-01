@@ -3,15 +3,9 @@
 #include "commandprocessor.h"
 
 CommandProcessor::CommandProcessor(const std::string& aName, const CommandProcessors& aDependentCommandProcessors)
-    : mContext(0)
-    , mName(aName)
+    : mName(aName)
     , mDependentCommandProcessors(aDependentCommandProcessors)
 {
-}
-
-void CommandProcessor::SetContext(void* aContext)
-{
-    mContext = aContext;
 }
 
 void CommandProcessor::StartBlock()
@@ -55,6 +49,12 @@ void CommandProcessor::ProcessBatch(const CommandBatch& aCommandBatch)
     mCounters.mCommandCounter += aCommandBatch.Size();
 }
 
+void CommandProcessor::Start()
+{
+    for (auto dependentCommandProcessor : mDependentCommandProcessors)
+        dependentCommandProcessor->Start();
+}
+
 void CommandProcessor::Stop()
 {
 #ifdef DEBUG_PRINT
@@ -73,7 +73,7 @@ void CommandProcessor::Stop()
 
 void CommandProcessor::DumpCounters() const
 {
-    std::cout << "Context: " << mContext << ", thread: " << mName << ", blocks: " << mCounters.mBlockCounter <<
+    std::cout << "Thread: " << mName << ", blocks: " << mCounters.mBlockCounter <<
         ", commands: " << mCounters.mCommandCounter;
 
     if (mCounters.mLineCounter != 0)

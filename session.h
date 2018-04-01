@@ -8,16 +8,19 @@
 class Session : public std::enable_shared_from_this<Session>
 {
 public:
-    Session(tcp::socket aSocket, std::size_t aBulkSize);
-    
+    Session(tcp::socket aSocket, std::shared_ptr<CommandProcessor> aCommandProcessor);
+    ~Session();
+
     void Start();
 
 private:
-	void Stop();
+    void Stop();
+
     void DoRead();
-    void Deliver();
+    void Deliver(std::size_t length);
 
     Context mContext;
     tcp::socket mSocket;
-    std::array<char, 1> mReadMsg;
+    static const std::size_t BufSize = 256;
+    std::array<char, BufSize> mReadMsg;
 };

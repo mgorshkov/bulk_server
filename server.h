@@ -1,6 +1,7 @@
 #pragma once
 
 #include "includes.h"
+#include "commandprocessor.h"
 
 class Server
 {
@@ -13,4 +14,5 @@ private:
     tcp::acceptor mAcceptor;
     tcp::socket mSocket;
     std::size_t mBulkSize;
+    std::shared_ptr<CommandProcessor> mCommandProcessor;
 };

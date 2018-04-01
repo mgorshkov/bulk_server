@@ -13,7 +13,6 @@ class CommandProcessor : public ICommandProcessor
 {
 public:
     CommandProcessor(const std::string& aName, const CommandProcessors& aDependentCommandProcessors = CommandProcessors());
-    void SetContext(void* aContext);
 
     void StartBlock() override;
     void FinishBlock() override;
@@ -24,13 +23,12 @@ public:
 
     void ProcessBatch(const CommandBatch& aCommandBatch) override;
 
-    void Start() override {}
+    void Start() override;
     void Stop() override;
 
     void DumpCounters() const override;
 
 protected:
-    void* mContext;
     std::string mName;
     Counters mCounters;
 

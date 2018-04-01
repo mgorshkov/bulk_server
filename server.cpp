@@ -5,10 +5,30 @@
 #include "server.h"
 #include "session.h"
 
+#include "threadedcommandprocessor.h"
+#include "threadedcommandprocessorimpl.h"
+#include "consoleoutput.h"
+#include "batchcommandprocessor.h"
+#include "reportwriter.h"
+
+#define THREADS 2
+
+static std::shared_ptr<CommandProcessor> CreateCommandProcessor(std::size_t bulkSize)
+{
+    auto reportWritersThreadedProcessor = std::make_shared<ThreadedCommandProcessor<ReportWriter>>("file", THREADS);
+    auto consoleOutputThreadedProcessor = std::make_shared<ThreadedCommandProcessor<ConsoleOutput>>("log");
+
+    CommandProcessors processors = {reportWritersThreadedProcessor, consoleOutputThreadedProcessor};
+    auto batchCommandProcessor = std::make_shared<BatchCommandProcessor>("main", bulkSize, processors);
+
+    return batchCommandProcessor;
+}
+
 Server::Server(boost::asio::io_service& aIoService, const tcp::endpoint& aEndPoint, std::size_t aBulkSize)
     : mAcceptor(aIoService, aEndPoint)
     , mSocket(aIoService)
     , mBulkSize(aBulkSize)
+    , mCommandProcessor(CreateCommandProcessor(aBulkSize))
 {
     DoAccept();
 }
@@ -19,7 +39,7 @@ void Server::DoAccept()
         [this](boost::system::error_code ec)
         {
             if (!ec)
-                std::make_shared<Session>(std::move(mSocket), mBulkSize)->Start();
+                std::make_shared<Session>(std::move(mSocket), mCommandProcessor)->Start();
 
             DoAccept();
         });

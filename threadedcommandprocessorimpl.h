@@ -25,6 +25,7 @@ ThreadedCommandProcessor<DependentProcessor>::~ThreadedCommandProcessor()
 template <typename DependentProcessor>
 void ThreadedCommandProcessor<DependentProcessor>::Start()
 {
+    mDone = false;
     for (int i = 0; i < mThreadsCount; ++i)
     {
         std::stringstream name;
@@ -87,7 +88,7 @@ void ThreadedCommandProcessor<DependentProcessor>::ThreadProc(ThreadedCommandPro
     try
     {
         DependentProcessor dependentProcessor(aName);
-        dependentProcessor.SetContext(aProcessor->mContext);
+        dependentProcessor.Start();
 #ifdef DEBUG_PRINT
         std::cout << "ThreadedCommandProcessor::ThreadProc 1, this==" << aProcessor << " " << aProcessor->mContext << std::endl;
 #endif
