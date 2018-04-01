@@ -26,7 +26,6 @@ before_install:
   - eval "${MATRIX_EVAL}"
 install:
   - sudo apt-get install -qq doxygen graphviz
-  - wget https://raw.githubusercontent.com/WrinklyNinja/ci-scripts/1.0.0/install_boost.py  
   - python install_boost.py --directory ~ --boost-version 1.65.1 filesystem system
 before_script:
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
