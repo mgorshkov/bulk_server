@@ -41,7 +41,7 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 find_package(Threads REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system filesystem)
+find_package(Boost 1.60.0 COMPONENTS system filesystem)
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
