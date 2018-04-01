@@ -26,6 +26,7 @@ before_script:
   - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
   - sudo apt-get update -qq
   - sudo apt-get install libboost-system-dev libboost-filesystem-dev -y
+  - sudo apt-cache search libboost
 script:
   - mkdir ${BUILD_DIR}
   - cd ${BUILD_DIR}
