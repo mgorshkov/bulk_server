@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
 project(bulk_server VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 configure_file(version.h.in ${CMAKE_CURRENT_SOURCE_DIR}/version.h)
@@ -41,7 +41,7 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 find_package(Threads REQUIRED)
-find_package(Boost 1.60.0 COMPONENTS system filesystem)
+find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
@@ -50,6 +50,8 @@ set_target_properties(bulk_server PROPERTIES
 )
 
 set(CMAKE_CXX_FLAGS "-std=c++1z")
+
+add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
 
 target_link_libraries(bulk_server
         ${Boost_LIBRARIES}
