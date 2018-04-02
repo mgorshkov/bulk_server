@@ -35,8 +35,8 @@ script:
   - mkdir ${BUILD_DIR}
   - cd ${BUILD_DIR}
   - cmake .. -DBOOST_ROOT=~/boost_1_58_0
-  - cmake --build .
-  - cmake --build . --target package
+  - cmake --build . -DBOOST_ROOT=~/boost_1_58_0
+  - cmake --build . --target package -DBOOST_ROOT=~/boost_1_58_0
 after_success:
   # Generate the docs only if master, and the TRAVIS_BUILD_DOCS is not zero
   - >-
