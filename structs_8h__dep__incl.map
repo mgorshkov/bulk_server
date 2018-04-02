@@ -1,0 +1,23 @@
+<map id="structs.h" name="structs.h">
+<area shape="rect" id="node2" href="$batchcommandprocessor_8h.html" title="batchcommandprocessor.h" alt="" coords="129,155,308,181"/>
+<area shape="rect" id="node5" href="$commandprocessor_8h.html" title="commandprocessor.h" alt="" coords="657,80,804,107"/>
+<area shape="rect" id="node20" href="$client_8cpp.html" title="client.cpp" alt="" coords="879,80,957,107"/>
+<area shape="rect" id="node21" href="$utils_8h.html" title="utils.h" alt="" coords="1053,155,1109,181"/>
+<area shape="rect" id="node3" href="$batchcommandprocessor_8cpp.html" title="batchcommandprocessor.cpp" alt="" coords="5,229,197,256"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="server.cpp" alt="" coords="487,304,568,331"/>
+<area shape="rect" id="node6" href="$commandprocessor_8cpp.html" title="commandprocessor.cpp" alt="" coords="727,155,888,181"/>
+<area shape="rect" id="node7" href="$consoleoutput_8h.html" title="consoleoutput.h" alt="" coords="913,155,1028,181"/>
+<area shape="rect" id="node9" href="$context_8h.html" title="context.h" alt="" coords="1149,155,1224,181"/>
+<area shape="rect" id="node13" href="$inputprocessor_8h.html" title="inputprocessor.h" alt="" coords="1373,155,1491,181"/>
+<area shape="rect" id="node15" href="$reportwriter_8h.html" title="reportwriter.h" alt="" coords="604,155,703,181"/>
+<area shape="rect" id="node17" href="$server_8h.html" title="server.h" alt="" coords="273,229,343,256"/>
+<area shape="rect" id="node18" href="$threadedcommandprocessor_8h.html" title="threadedcommandprocessor.h" alt="" coords="383,155,580,181"/>
+<area shape="rect" id="node8" href="$consoleoutput_8cpp.html" title="consoleoutput.cpp" alt="" coords="900,229,1028,256"/>
+<area shape="rect" id="node10" href="$context_8cpp.html" title="context.cpp" alt="" coords="1251,229,1341,256"/>
+<area shape="rect" id="node11" href="$session_8h.html" title="session.h" alt="" coords="1147,229,1225,256"/>
+<area shape="rect" id="node12" href="$session_8cpp.html" title="session.cpp" alt="" coords="1315,304,1407,331"/>
+<area shape="rect" id="node14" href="$inputprocessor_8cpp.html" title="inputprocessor.cpp" alt="" coords="1366,229,1497,256"/>
+<area shape="rect" id="node16" href="$reportwriter_8cpp.html" title="reportwriter.cpp" alt="" coords="764,229,875,256"/>
+<area shape="rect" id="node19" href="$threadedcommandprocessorimpl_8h.html" title="threadedcommandprocessorimpl.h" alt="" coords="417,229,639,256"/>
+<area shape="rect" id="node22" href="$utils_8cpp.html" title="utils.cpp" alt="" coords="1053,229,1123,256"/>
+</map>

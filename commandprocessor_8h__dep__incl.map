@@ -1,0 +1,19 @@
+<map id="commandprocessor.h" name="commandprocessor.h">
+<area shape="rect" id="node2" href="$batchcommandprocessor_8h.html" title="batchcommandprocessor.h" alt="" coords="456,80,635,107"/>
+<area shape="rect" id="node5" href="$commandprocessor_8cpp.html" title="commandprocessor.cpp" alt="" coords="170,80,331,107"/>
+<area shape="rect" id="node6" href="$consoleoutput_8h.html" title="consoleoutput.h" alt="" coords="672,80,787,107"/>
+<area shape="rect" id="node8" href="$context_8h.html" title="context.h" alt="" coords="356,80,431,107"/>
+<area shape="rect" id="node12" href="$inputprocessor_8h.html" title="inputprocessor.h" alt="" coords="28,80,146,107"/>
+<area shape="rect" id="node14" href="$reportwriter_8h.html" title="reportwriter.h" alt="" coords="832,80,931,107"/>
+<area shape="rect" id="node16" href="$server_8h.html" title="server.h" alt="" coords="1055,155,1124,181"/>
+<area shape="rect" id="node17" href="$threadedcommandprocessor_8h.html" title="threadedcommandprocessor.h" alt="" coords="1063,80,1260,107"/>
+<area shape="rect" id="node3" href="$batchcommandprocessor_8cpp.html" title="batchcommandprocessor.cpp" alt="" coords="448,155,640,181"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="server.cpp" alt="" coords="840,229,922,256"/>
+<area shape="rect" id="node7" href="$consoleoutput_8cpp.html" title="consoleoutput.cpp" alt="" coords="666,155,794,181"/>
+<area shape="rect" id="node9" href="$context_8cpp.html" title="context.cpp" alt="" coords="282,155,372,181"/>
+<area shape="rect" id="node10" href="$session_8h.html" title="session.h" alt="" coords="178,155,256,181"/>
+<area shape="rect" id="node11" href="$session_8cpp.html" title="session.cpp" alt="" coords="54,229,146,256"/>
+<area shape="rect" id="node13" href="$inputprocessor_8cpp.html" title="inputprocessor.cpp" alt="" coords="22,155,154,181"/>
+<area shape="rect" id="node15" href="$reportwriter_8cpp.html" title="reportwriter.cpp" alt="" coords="919,155,1030,181"/>
+<area shape="rect" id="node18" href="$threadedcommandprocessorimpl_8h.html" title="threadedcommandprocessorimpl.h" alt="" coords="1199,155,1420,181"/>
+</map>
