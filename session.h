@@ -1,6 +1,6 @@
 #pragma once
 
-#include <array>
+#include <boost/asio.hpp>
 
 #include "includes.h"
 #include "context.h"
@@ -17,10 +17,9 @@ private:
     void Stop();
 
     void DoRead();
-    void Deliver(std::size_t length);
+    void Deliver();
 
     Context mContext;
     tcp::socket mSocket;
-    static const std::size_t BufSize = 256;
-    std::array<char, BufSize> mReadMsg;
+    boost::asio::streambuf mBuffer;
 };
