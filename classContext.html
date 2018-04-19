@@ -100,8 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2d34e4556448e40693f61d15e091b604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ef268a979692228a191a036bd478e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a67ef268a979692228a191a036bd478e9">SetProcessor</a> (std::shared_ptr&lt; <a class="el" href="classCommandProcessor.html">CommandProcessor</a> &gt; aCommandProcessor)</td></tr>
 <tr class="separator:a67ef268a979692228a191a036bd478e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1aeef7739d1924c9039b75fef26bc4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#ab1aeef7739d1924c9039b75fef26bc4c">ProcessData</a> (const char *aData, std::size_t aSize)</td></tr>
-<tr class="separator:ab1aeef7739d1924c9039b75fef26bc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0033dcc6e9320523eeaccaec279dadd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a0033dcc6e9320523eeaccaec279dadd9">ProcessData</a> (boost::asio::streambuf *aStream)</td></tr>
+<tr class="separator:a0033dcc6e9320523eeaccaec279dadd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a24ae2b78bf7d25bb97b73df6b73340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a1a24ae2b78bf7d25bb97b73df6b73340">Start</a> ()</td></tr>
 <tr class="separator:a1a24ae2b78bf7d25bb97b73df6b73340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eddc3597a129306ed5e5194db0b1ccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a9eddc3597a129306ed5e5194db0b1ccf">Stop</a> ()</td></tr>
@@ -139,26 +139,16 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab1aeef7739d1924c9039b75fef26bc4c"></a>
+<a class="anchor" id="a0033dcc6e9320523eeaccaec279dadd9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Context::ProcessData </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>aData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">boost::asio::streambuf *&#160;</td>
+          <td class="paramname"><em>aStream</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>aSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

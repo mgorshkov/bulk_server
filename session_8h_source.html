@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="session_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="includes_8h.html">includes.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="context_8h.html">context.h</a>&quot;</span></div>
@@ -103,15 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> Stop();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> DoRead();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> Deliver(std::size_t length);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> Deliver();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classContext.html">Context</a> mContext;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    tcp::socket mSocket;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::size_t BufSize = 256;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::array&lt;char, BufSize&gt; mReadMsg;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    boost::asio::streambuf mBuffer;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="ttc" id="context_8h_html"><div class="ttname"><a href="context_8h.html">context.h</a></div></div>
-<div class="ttc" id="classContext_html"><div class="ttname"><a href="classContext.html">Context</a></div><div class="ttdef"><b>Definition:</b> context.h:12</div></div>
+<div class="ttc" id="classContext_html"><div class="ttname"><a href="classContext.html">Context</a></div><div class="ttdef"><b>Definition:</b> context.h:13</div></div>
 <div class="ttc" id="classSession_html_a68020021e9d13c85b641d853646e8b7a"><div class="ttname"><a href="classSession.html#a68020021e9d13c85b641d853646e8b7a">Session::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> session.cpp:24</div></div>
 <div class="ttc" id="classSession_html_a21fe7e831c8dd5162caed7dcfb6cb9be"><div class="ttname"><a href="classSession.html#a21fe7e831c8dd5162caed7dcfb6cb9be">Session::Session</a></div><div class="ttdeci">Session(tcp::socket aSocket, std::shared_ptr&lt; CommandProcessor &gt; aCommandProcessor)</div><div class="ttdef"><b>Definition:</b> session.cpp:6</div></div>
 <div class="ttc" id="includes_8h_html"><div class="ttname"><a href="includes_8h.html">includes.h</a></div></div>
