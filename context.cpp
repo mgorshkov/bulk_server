@@ -37,7 +37,7 @@ void Context::Start()
     mThread = std::move(std::thread(&Context::ThreadProc, this, mCommandProcessor));
 }
 
-void Context::ProcessData(boost::asio::streambuf* aStream)
+void Context::ProcessData(const char* aData, std::size_t aSize)
 {
 #ifdef DEBUG_PRINT
     std::cout << "Context::ProcessData, this==" << this << ", aData=" << aData << ", aSize=" << aSize << ", mDone=" << mDone.load() << std::endl;
@@ -49,7 +49,7 @@ void Context::ProcessData(boost::asio::streambuf* aStream)
 #ifdef DEBUG_PRINT
         std::cout << "Context::ProcessData 2, pos = " << mStream.tellp() << std::endl;
 #endif
-        mStream << aStream;
+        mStream.write(aData, aSize);
 #ifdef DEBUG_PRINT
         std::cout << "Context::ProcessData 3, pos = " << mStream.tellp() << std::endl;
 #endif
@@ -92,7 +92,7 @@ void Context::ProcessStream(std::shared_ptr<CommandProcessor> aCommandProcessor)
 #ifdef DEBUG_PRINT
         std::cout << "Context::ProcessStream 1, pos = " << mStream.tellp() << ", str=" <<  mStream.str() << std::endl;
 #endif
-        while (std::getline(mStream, line))
+        while (!std::getline(mStream, line).eof())
         {
             if (line.length() > 0 && line[line.length() - 1] == '\r')
             {

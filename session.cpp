@@ -36,13 +36,13 @@ void Session::DoRead()
 {
     auto self(shared_from_this());
 
-    boost::asio::async_read_until(mSocket, mBuffer, '\n',
-        [this, self](boost::system::error_code ec, std::size_t /*length*/)
+    boost::asio::async_read(mSocket, boost::asio::buffer(mReadMsg),
+        [this, self](boost::system::error_code ec, std::size_t length)
         {
 #ifdef DEBUG_PRINT
-            std::cout << "Session::DoRead, this==" << this << ", ec=" << ec << std::endl;
+            std::cout << "Session::DoRead, this==" << this << ", ec=" << ec << ", mReadMsg=" << &mReadMsg[0] << ", length=" << length << std::endl;
 #endif
-            Deliver();
+            Deliver(length);
 
             if (!ec)
                 DoRead();
@@ -51,11 +51,11 @@ void Session::DoRead()
         });
 }
 
-void Session::Deliver()
+void Session::Deliver(std::size_t length)
 {
 #ifdef DEBUG_PRINT
-    std::cout << "Session::Deliver, this==" << this  << std::endl;
+    std::cout << "Session::Deliver, this==" << this << ", mReadMsg.data()=" << mReadMsg.data() << ", mReadMsg.size()=" << mReadMsg.size() << std::endl;
 #endif
 
-    mContext.ProcessData(&mBuffer);
+    mContext.ProcessData(mReadMsg.data(), length);
 }

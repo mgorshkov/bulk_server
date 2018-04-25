@@ -1,6 +1,5 @@
 #pragma once
 
-#include <boost/asio.hpp>
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -18,7 +17,7 @@ public:
 
     void SetProcessor(std::shared_ptr<CommandProcessor> aCommandProcessor);
 
-    void ProcessData(boost::asio::streambuf* aStream);
+    void ProcessData(const char* aData, std::size_t aSize);
 
     void Start();
     void Stop();
