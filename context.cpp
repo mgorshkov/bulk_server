@@ -118,13 +118,13 @@ void Context::ProcessStream(std::shared_ptr<CommandProcessor> aCommandProcessor)
     }
     for (const auto& line: text)
     {
-#ifdef DEBUG_PRINT
+//#ifdef DEBUG_PRINT
         std::cout << "Context::ProcessStream 6, line=" << line << ";" << std::endl;
-#endif
+//#endif
         aCommandProcessor->ProcessLine(line);
-#ifdef DEBUG_PRINT
+//#ifdef DEBUG_PRINT
         std::cout << "Context::ProcessStream 7, line=" << line << std::endl;
-#endif
+//#endif
     }
 }
 
@@ -154,7 +154,6 @@ void Context::ThreadProc(std::shared_ptr<CommandProcessor> aCommandProcessor)
         std::cout << "Context::ThreadProc1, this==" << this << std::endl;
 #endif
         ProcessStream(aCommandProcessor);
-        aCommandProcessor->DumpCounters();
 #ifdef DEBUG_PRINT
         std::cout << "Context::ThreadProc2, this==" << this << std::endl;
 #endif

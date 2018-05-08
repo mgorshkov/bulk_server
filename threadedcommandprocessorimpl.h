@@ -80,9 +80,6 @@ void ThreadedCommandProcessor<DependentProcessor>::Stop()
 }
 
 template <typename DependentProcessor>
-void ThreadedCommandProcessor<DependentProcessor>::DumpCounters() const {}
-
-template <typename DependentProcessor>
 void ThreadedCommandProcessor<DependentProcessor>::ThreadProc(const std::string& aName)
 {
 #ifdef DEBUG_PRINT

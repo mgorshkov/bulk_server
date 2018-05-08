@@ -24,11 +24,4 @@ struct CommandBatch
     }
 };
 
-struct Counters
-{
-    int mLineCounter{0};
-    int mBlockCounter{0};
-    int mCommandCounter{0};
-};
-
 using BulkQueue = std::deque<std::string>;

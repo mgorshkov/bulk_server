@@ -26,11 +26,8 @@ public:
     void Start() override;
     void Stop() override;
 
-    void DumpCounters() const override;
-
 protected:
     std::string mName;
-    Counters mCounters;
 
 private:
     CommandProcessors mDependentCommandProcessors;

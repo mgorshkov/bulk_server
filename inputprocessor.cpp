@@ -41,7 +41,3 @@ void InputProcessor::ProcessLine(const std::string& aLine)
     }
     CommandProcessor::ProcessLine(aLine);
 }
-
-void InputProcessor::DumpCounters() const
-{
-}

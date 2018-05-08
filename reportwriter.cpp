@@ -12,6 +12,7 @@
 
 ReportWriter::ReportWriter(const std::string& aName)
     : CommandProcessor(aName)
+    , mBatchCounter(0)
 {
 }
 
@@ -38,6 +39,6 @@ std::string ReportWriter::GetFilename(const Command& aCommand)
         aCommand.mTimestamp.time_since_epoch()).count();
     std::ostringstream filename;
     filename << mName << Separator << "bulk" << Separator
-        << mCounters.mBlockCounter << Separator << seconds << ".log";
+        << mBatchCounter++ << Separator << seconds << ".log";
     return filename.str();
 }

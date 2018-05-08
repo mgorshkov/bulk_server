@@ -21,8 +21,6 @@ public:
 
     void Stop() override;
 
-    void DumpCounters() const override;
-
 private:
     void ThreadProc(const std::string& aName);
 

@@ -10,8 +10,6 @@ public:
 
     void ProcessLine(const std::string& aLine) override;
 
-    void DumpCounters() const override;
-
 private:
     int mBlockDepth{0};
 };

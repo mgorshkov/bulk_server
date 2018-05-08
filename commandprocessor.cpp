@@ -12,8 +12,6 @@ void CommandProcessor::StartBlock()
 {
     for (auto dependentCommandProcessor : mDependentCommandProcessors)
         dependentCommandProcessor->StartBlock();
-
-    ++mCounters.mBlockCounter;
 }
 
 void CommandProcessor::FinishBlock()
@@ -26,16 +24,12 @@ void CommandProcessor::ProcessLine(const std::string& aLine)
 {
     for (auto dependentCommandProcessor : mDependentCommandProcessors)
         dependentCommandProcessor->ProcessLine(aLine);
-
-    ++mCounters.mLineCounter;
 }
 
 void CommandProcessor::ProcessCommand(const Command& aCommand)
 {
     for (auto dependentCommandProcessor : mDependentCommandProcessors)
         dependentCommandProcessor->ProcessCommand(aCommand);
-
-    ++mCounters.mCommandCounter;
 }
 
 void CommandProcessor::ProcessBatch(const CommandBatch& aCommandBatch)
@@ -44,9 +38,6 @@ void CommandProcessor::ProcessBatch(const CommandBatch& aCommandBatch)
     {
         dependentCommandProcessor->ProcessBatch(aCommandBatch);
     }
-
-    ++mCounters.mBlockCounter;
-    mCounters.mCommandCounter += aCommandBatch.Size();
 }
 
 void CommandProcessor::Start()
@@ -71,16 +62,3 @@ void CommandProcessor::Stop()
 #endif
 }
 
-void CommandProcessor::DumpCounters() const
-{
-    std::cout << "Thread: " << mName << ", blocks: " << mCounters.mBlockCounter <<
-        ", commands: " << mCounters.mCommandCounter;
-
-    if (mCounters.mLineCounter != 0)
-        std::cout << ", lines: " << mCounters.mLineCounter;
-
-    std::cout << std::endl;
-
-    for (auto dependentCommandProcessor : mDependentCommandProcessors)
-        dependentCommandProcessor->DumpCounters();
-}

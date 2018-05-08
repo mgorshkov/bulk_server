@@ -15,4 +15,6 @@ private:
     std::string GetFilename(const Command& aCommand);
 
     static const char Separator = '-';
+
+    int mBatchCounter;
 };
