@@ -4,6 +4,5 @@ var searchData=
   ['commandbatch',['CommandBatch',['../structCommandBatch.html',1,'']]],
   ['commandprocessor',['CommandProcessor',['../classCommandProcessor.html',1,'']]],
   ['consoleoutput',['ConsoleOutput',['../classConsoleOutput.html',1,'']]],
-  ['context',['Context',['../classContext.html',1,'']]],
-  ['counters',['Counters',['../structCounters.html',1,'']]]
+  ['context',['Context',['../classContext.html',1,'']]]
 ];

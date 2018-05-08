@@ -13,6 +13,5 @@ var searchData=
   ['consoleoutput_2eh',['consoleoutput.h',['../consoleoutput_8h.html',1,'']]],
   ['context',['Context',['../classContext.html',1,'Context'],['../classContext.html#a652cdcd2eedc8dbd9110bd284c5d5cf0',1,'Context::Context()']]],
   ['context_2ecpp',['context.cpp',['../context_8cpp.html',1,'']]],
-  ['context_2eh',['context.h',['../context_8h.html',1,'']]],
-  ['counters',['Counters',['../structCounters.html',1,'']]]
+  ['context_2eh',['context.h',['../context_8h.html',1,'']]]
 ];

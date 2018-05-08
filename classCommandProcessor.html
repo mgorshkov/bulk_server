@@ -104,7 +104,7 @@ Collaboration diagram for CommandProcessor:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCommandProcessor__coll__graph.png" border="0" usemap="#CommandProcessor_coll__map" alt="Collaboration graph"/></div>
 <map name="CommandProcessor_coll__map" id="CommandProcessor_coll__map">
-<area shape="rect" id="node2" href="classICommandProcessor.html" title="ICommandProcessor" alt="" coords="5,5,149,32"/><area shape="rect" id="node3" href="structCounters.html" title="Counters" alt="" coords="175,5,248,32"/></map>
+<area shape="rect" id="node2" href="classICommandProcessor.html" title="ICommandProcessor" alt="" coords="5,5,149,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -125,8 +125,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4c11c126e94da03ea20f27c11371745e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72537797793061c66374da42f1944cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandProcessor.html#ab72537797793061c66374da42f1944cd">Stop</a> () override</td></tr>
 <tr class="separator:ab72537797793061c66374da42f1944cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcd197cd2f0c20aaf34dbb8012963452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandProcessor.html#afcd197cd2f0c20aaf34dbb8012963452">DumpCounters</a> () const override</td></tr>
-<tr class="separator:afcd197cd2f0c20aaf34dbb8012963452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classICommandProcessor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classICommandProcessor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classICommandProcessor.html">ICommandProcessor</a></td></tr>
 <tr class="memitem:ab3e87120a00a767945fc183e7c3f1dc4 inherit pub_methods_classICommandProcessor"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classICommandProcessor.html#ab3e87120a00a767945fc183e7c3f1dc4">~ICommandProcessor</a> ()=default</td></tr>
 <tr class="separator:ab3e87120a00a767945fc183e7c3f1dc4 inherit pub_methods_classICommandProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,8 +133,6 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:afa664dd1784fb154e3564ebbb2f0f885"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandProcessor.html#afa664dd1784fb154e3564ebbb2f0f885">mName</a></td></tr>
 <tr class="separator:afa664dd1784fb154e3564ebbb2f0f885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5d865a0e3f2377f71c3c56b16df4d58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCounters.html">Counters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandProcessor.html#ae5d865a0e3f2377f71c3c56b16df4d58">mCounters</a></td></tr>
-<tr class="separator:ae5d865a0e3f2377f71c3c56b16df4d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a007cf5bee10aed36c0bb6b4205ec3a78"></a>
@@ -166,33 +162,6 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afcd197cd2f0c20aaf34dbb8012963452"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CommandProcessor::DumpCounters </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classICommandProcessor.html#a40d022f16c9b42d45e6bbce2cf75d807">ICommandProcessor</a>.</p>
-
-<p>Reimplemented in <a class="el" href="classThreadedCommandProcessor.html#adab3dbb5c727a4cf59be8dea462b2b6d">ThreadedCommandProcessor&lt; DependentProcessor &gt;</a>, and <a class="el" href="classInputProcessor.html#a837da3d36322b383a7d4aa76c9de193a">InputProcessor</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="acc8b645095530ed5eff11740d9dc644d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -378,26 +347,6 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ae5d865a0e3f2377f71c3c56b16df4d58"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structCounters.html">Counters</a> CommandProcessor::mCounters</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="afa664dd1784fb154e3564ebbb2f0f885"></a>
 <div class="memitem">
 <div class="memproto">
