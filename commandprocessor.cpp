@@ -60,7 +60,7 @@ void CommandProcessor::Stop()
 #ifdef DEBUG_PRINT
     std::cout << "CommandProcessor::Stop1()" << this << std::endl;
 #endif
-    DumpCounters();
+    Stop();
 #ifdef DEBUG_PRINT
     std::cout << "CommandProcessor::Stop2()" << this << std::endl;
 #endif
@@ -80,4 +80,7 @@ void CommandProcessor::DumpCounters() const
         std::cout << ", lines: " << mCounters.mLineCounter;
 
     std::cout << std::endl;
+
+    for (auto dependentCommandProcessor : mDependentCommandProcessors)
+        dependentCommandProcessor->DumpCounters();
 }

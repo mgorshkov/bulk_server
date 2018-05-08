@@ -135,7 +135,6 @@ void Context::ThreadProc(std::shared_ptr<CommandProcessor> aCommandProcessor)
 #endif
     try
     {
-        aCommandProcessor->Start();
         while (!mDone.load())
         {
 #ifdef DEBUG_PRINT
@@ -155,7 +154,7 @@ void Context::ThreadProc(std::shared_ptr<CommandProcessor> aCommandProcessor)
         std::cout << "Context::ThreadProc1, this==" << this << std::endl;
 #endif
         ProcessStream(aCommandProcessor);
-        aCommandProcessor->Stop();
+        aCommandProcessor->DumpCounters();
 #ifdef DEBUG_PRINT
         std::cout << "Context::ThreadProc2, this==" << this << std::endl;
 #endif

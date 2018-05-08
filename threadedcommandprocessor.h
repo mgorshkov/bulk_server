@@ -17,8 +17,6 @@ public:
     ThreadedCommandProcessor(const std::string& aName, int aThreadsCount = 1);
     ~ThreadedCommandProcessor();
 
-    void Start() override;
-
     void ProcessBatch(const CommandBatch& aCommandBatch) override;
 
     void Stop() override;
@@ -26,7 +24,7 @@ public:
     void DumpCounters() const override;
 
 private:
-    static void ThreadProc(ThreadedCommandProcessor* aProcessor, const std::string& aName);
+    void ThreadProc(const std::string& aName);
 
     void ProcessQueue(std::unique_lock<std::mutex>& lk, CommandProcessor& aDependentProcessor);
 
