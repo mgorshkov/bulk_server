@@ -1,4 +1,6 @@
 <map id="inputprocessor.h" name="inputprocessor.h">
 <area shape="rect" id="node2" href="$inputprocessor_8cpp.html" title="inputprocessor.cpp" alt="" coords="5,80,136,107"/>
-<area shape="rect" id="node3" href="$session_8cpp.html" title="session.cpp" alt="" coords="161,80,252,107"/>
+<area shape="rect" id="node3" href="$session_8h.html" title="session.h" alt="" coords="161,80,239,107"/>
+<area shape="rect" id="node5" href="$session_8cpp.html" title="session.cpp" alt="" coords="231,155,323,181"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="server.cpp" alt="" coords="124,155,205,181"/>
 </map>

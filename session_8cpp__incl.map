@@ -1,9 +1,8 @@
 <map id="session.cpp" name="session.cpp">
-<area shape="rect" id="node3" href="$session_8h.html" title="session.h" alt="" coords="556,80,634,107"/>
-<area shape="rect" id="node21" href="$inputprocessor_8h.html" title="inputprocessor.h" alt="" coords="691,155,809,181"/>
-<area shape="rect" id="node5" href="$includes_8h.html" title="includes.h" alt="" coords="510,155,590,181"/>
-<area shape="rect" id="node7" href="$context_8h.html" title="context.h" alt="" coords="250,155,325,181"/>
-<area shape="rect" id="node14" href="$commandprocessor_8h.html" title="commandprocessor.h" alt="" coords="653,229,800,256"/>
-<area shape="rect" id="node17" href="$structs_8h.html" title="structs.h" alt="" coords="690,304,762,331"/>
-<area shape="rect" id="node20" href="$icommandprocessor_8h.html" title="icommandprocessor.h" alt="" coords="515,304,665,331"/>
+<area shape="rect" id="node4" href="$session_8h.html" title="session.h" alt="" coords="165,80,243,107"/>
+<area shape="rect" id="node8" href="$inputprocessor_8h.html" title="inputprocessor.h" alt="" coords="246,155,364,181"/>
+<area shape="rect" id="node6" href="$includes_8h.html" title="includes.h" alt="" coords="65,155,145,181"/>
+<area shape="rect" id="node10" href="$commandprocessor_8h.html" title="commandprocessor.h" alt="" coords="207,229,353,256"/>
+<area shape="rect" id="node13" href="$structs_8h.html" title="structs.h" alt="" coords="111,304,184,331"/>
+<area shape="rect" id="node16" href="$icommandprocessor_8h.html" title="icommandprocessor.h" alt="" coords="354,304,504,331"/>
 </map>
