@@ -3,7 +3,7 @@
 #include <array>
 
 #include "includes.h"
-#include "context.h"
+#include "inputprocessor.h"
 
 class Session : public std::enable_shared_from_this<Session>
 {
@@ -14,13 +14,13 @@ public:
     void Start();
 
 private:
-    void Stop();
-
     void DoRead();
     void Deliver(std::size_t length);
+    void ProcessStream();
 
-    Context mContext;
     tcp::socket mSocket;
+    InputProcessor mProcessor;
     static const std::size_t BufSize = 1;
     std::array<char, BufSize> mReadMsg;
+    std::stringstream mStream;
 };

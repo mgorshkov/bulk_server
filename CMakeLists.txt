@@ -15,8 +15,6 @@ add_executable(bulk_server
 	server.h
 	session.cpp
 	session.h
-	context.cpp
-	context.h
 	batchcommandprocessor.cpp
 	batchcommandprocessor.h
 	commandprocessor.cpp
