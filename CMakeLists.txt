@@ -45,9 +45,11 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 set_target_properties(bulk_server PROPERTIES
 	COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-	CMAKE_CXX_STANDARD 14
+	CMAKE_CXX_STANDARD 17
 	CMAKE_CXX_STANDARD_REQUIRED ON
 )
+
+set(CMAKE_CXX_FLAGS "-std=c++1z")
 
 target_link_libraries(bulk_server
         ${Boost_LIBRARIES}

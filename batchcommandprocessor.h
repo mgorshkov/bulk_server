@@ -1,6 +1,11 @@
 #pragma once
 
 #include <vector>
+#include <thread>
+#include <mutex>
+#include <atomic>
+#include <chrono>
+#include <optional>
 
 #include "structs.h"
 #include "commandprocessor.h"
@@ -20,7 +25,13 @@ private:
     void ClearBatch();
     void DumpBatch();
 
+    void ThreadProc();
+
     std::size_t mBulkSize;
     bool mBlockForced;
     std::vector<Command> mCommandBatch;
+    std::thread mAutoDumpThread;
+    std::optional<std::chrono::system_clock::time_point> mLastCommandTimestamp;
+    std::mutex mBatchMutex;
+    std::atomic<bool> mDone;
 };

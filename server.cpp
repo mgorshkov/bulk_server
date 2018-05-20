@@ -42,6 +42,7 @@ void Server::DoAccept()
                 std::make_shared<Session>(std::move(mSocket), mCommandProcessor)->Start();
 
             DoAccept();
+
         });
 }
 

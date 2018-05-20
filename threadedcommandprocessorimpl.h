@@ -62,20 +62,9 @@ void ThreadedCommandProcessor<DependentProcessor>::Stop()
 #ifdef DEBUG_PRINT
     std::cout << "ThreadedCommandProcessor<DependentProcessor>::Stop()" << this << std::endl;
 #endif
-//    mDone = true;
-//    mCondition.notify_all();
-#ifdef DEBUG_PRINT
-    std::cout << "ThreadedCommandProcessor<DependentProcessor>::Stop2()" << this << std::endl;
-#endif
-//    for (auto& thread : mThreads)
-//        if (thread.joinable())
- //           thread.join();
-#ifdef DEBUG_PRINT
-    std::cout << "ThreadedCommandProcessor<DependentProcessor>::Stop3()" << this << std::endl;
-#endif
     CommandProcessor::Stop();
 #ifdef DEBUG_PRINT
-    std::cout << "ThreadedCommandProcessor<DependentProcessor>::Stop4()" << this << std::endl;
+    std::cout << "ThreadedCommandProcessor<DependentProcessor>::Stop2()" << this << std::endl;
 #endif
 }
 
